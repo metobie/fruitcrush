@@ -171,7 +171,6 @@ brew install koekeishiya/formulae/skhd #      https://github.com/koekeishiya/skh
 
 # -- Backup -- #
 cd ~/ 
-Backup dot-files just in case
 mkdir -p ~/.bak/config
 cp .p10k.zsh .bak/config/.p10k.zsh.bak
 cp .skhdrc .bak/config/.skhdrc.bak
