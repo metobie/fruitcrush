@@ -62,7 +62,7 @@ brew install --cask multifirefox #            https://formulae.brew.sh/cask/mult
 brew install --cask flameshot #               https://formulae.brew.sh/cask/flameshot
 
 # Github                                      GitHub command-line tool
-brew install --cask gh #                      https://formulae.brew.sh/formula/gh
+brew install gh #                             https://formulae.brew.sh/formula/gh
 
 # Git                                         Distributed revision control system
 brew install git #                            https://formulae.brew.sh/formula/git
