@@ -170,29 +170,24 @@ brew install koekeishiya/formulae/skhd #      https://github.com/koekeishiya/skh
 # sudo make install
 
 # -- Backup -- #
-# cd ~/ 
-# Backup dot-files just in case
-# mkdir -p ~/.bak/config
-# cp .p10k.zsh .bak/config/.p10k.zsh.bak
-# cp .skhdrc .bak/config/.skhdrc.bak
-# cp .yabairc .bak/config/.yabairc.bak
-# cp .zprofile .bak/config/.zprofile.bak
+cd ~/ 
+Backup dot-files just in case
+mkdir -p ~/.bak/config
+cp .p10k.zsh .bak/config/.p10k.zsh.bak
+cp .skhdrc .bak/config/.skhdrc.bak
+cp .yabairc .bak/config/.yabairc.bak
+cp .zprofile .bak/config/.zprofile.bak
 
 #  --  Oh-my-zsh  --  #
 # Open home folder
 cd ~/ 
-
 # Run Oh My Zsh                              https://github.com/ohmyzsh/ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Download PowerLevel10K Theme               https://github.com/romkatv/powerlevel10k
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-
 # Install fonts
 cd ~/ 
-# clone
 git clone https://github.com/powerline/fonts.git --depth=1 ~/Documents/GitHub/powerline/fonts
-# install
 cd ~/Documents/GitHub/powerline/fonts
 ./install.sh
 # clean-up a bit
@@ -200,20 +195,14 @@ cd ..
 cd ..
 rm -rf powerline*
 
-# Set the theme in ~/.zshrc
-cd ~/ 
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k/powerlevel10k"/g' ~/.zshrc
-p10k configure
-
-
+# Copy configs
 cd ~/ 
 git clone https://github.com/metobie/fruitcrush.git ~/Documents/GitHub/fruitcrush
 cd ~/Documents/GitHub/fruitcrush/dotfiles
-# cp .p10k.zsh .
+cp .p10k.zsh ~/
 cp .skhdrc ~/
 cp .yabairc ~/
-# cp .zprofile ~/
-# cp .zshrc ~/
+cp .zshrc ~/
 
 # clean-up a bit
 cd ..
@@ -224,58 +213,8 @@ yabai --start-service #Allow the prompts
 yabai --restart-service #Allow the prompts
 skhd --start-service # Allow the prompts
 skhd --restart-service # Allow the prompts
+
+cd ~/ 
 source ~/.zshrc
-# add write changes to zshrc files
-#echo 'Hello' >> /Users/username/Desktop/user.txt
+p10k configure
 
-#  --  Sketchybar  --  # REPLACED BY SWIFTBAR
-# Install
-#brew tap FelixKratz/formulae
-#brew install sketchybar
-#brew tap homebrew/cask-fonts
-#brew install --cask font-hack-nerd-font
-#echo "Installing as a background service"
-#echo "Or, if you don't want/need a background service you can just run:"
-#echo  "LANG="en_US.UTF-8" /opt/homebrew/opt/sketchybar/bin/sketchybar"
-#echo "Run to disable background service: brew services start felixkratz/formulae/sketchybar"
-#mkdir -p ~/.config/sketchybar
-#cp /opt/homebrew/opt/sketchybar/share/sketchybar/examples/sketchybarrc ~/.config/sketchybar/sketchybarrc
-#mkdir ~/.config/sketchybar/plugins
-#cp -r /opt/homebrew/opt/sketchybar/share/sketchybar/examples/plugins/ ~/.config/sketchybar/plugins/
-#chmod +x ~/.config/sketchybar/plugins/*
-#brew services start felixkratz/formulae/sketchybar
-
-#  ---  BitBar  --  €
-#BitBar                                       Utility to display the output from any script or program in the menu bar
-# brew install --cask bitbar #                  https://formulae.brew.sh/cask/bitbar
-# mkdir ~/.config/BitBar
-# git clone yabai.1d.sh ~/.config/BitBar # Fix this. 1d=run once a day
-# sudo chmod +x ~/.config/BitBar/yabai.1d.sh
-# BitBar # How to open application from terminal? Accept prompt
-
-
-# Backup dot-files just in case
-#mkdir .config.bak
-#mv .zprofile .bak/.zprofile.bak
-#mv .zshrc .bak/.zshrc.bak
-
-# Copy all dotfiles frim github after all extensions such as 
-# yabai, skhd, bitbar etc has been insalled and started
-#.config/
-#
-
-# Webroot
-#code
-
-
-# -- Application configurations -- #
-
-# iTerm2
-# Flameshot
-# Yabai
-# SKHD
-# ohmyz
-# iterm profile
-# yasabi profile
-# skhd profile
-# !docker
